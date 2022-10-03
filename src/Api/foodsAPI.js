@@ -45,6 +45,7 @@ export async function fetchOneFoodRecipe(id) {
   try {
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
     const result = await response.json();
+    console.log(result.meals);
     return result.meals ? result.meals : [];
   } catch (error) {
     return [];
